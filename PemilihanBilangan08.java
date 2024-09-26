@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class PemilihanBilangan08 {
     public static void main(String[] args) {
 

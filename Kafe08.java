@@ -1,23 +1,23 @@
+import java.lang.classfile.instruction.SwitchCase;
 import java.util.Scanner;
 
-public class Kafe08 {
+public class kafe26 {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
         String menu;
         char ukuranCup;
         int jumlah;
-        boolean keanggotaan;
+        boolean keangotaan;
 
         System.out.print("Masukkan menu: ");
         menu = sc.nextLine();
         System.out.print("Masukkan ukuran cup: ");
         ukuranCup = sc.next().charAt(0);
-        System.out.print("Masukkan jumlah: ");
+        System.out.print("Masukkan Jumlah: ");
         jumlah = sc.nextInt();
-        System.out.print("Masukkan keanggotaan (true/false: )" );
-        keanggotaan = sc.nextBoolean();
+        System.out.print("Maukkan keangotaan (true/false): ");
+        keangotaan = sc.nextBoolean();
 
         double hargaMenu = 0;
 
@@ -31,10 +31,9 @@ public class Kafe08 {
             case "coklat":
                 hargaMenu = 20000;
                 break;
-
         }
 
-        double totalHarga = hargaMenu * jumlah;
+        double totalHarga = hargaMenu + jumlah;
 
         switch (ukuranCup) {
             case 'S':
@@ -45,15 +44,13 @@ public class Kafe08 {
             case 'L':
                 totalHarga += 0.4 * totalHarga;
                 break;
-            default:
-                System.out.println("size yang dipilih tidak tersedia");        
         }
 
-        double diskon = keanggotaan ? 0 : 0.1;
+        double diskon = keangotaan ? 0 : 0.1;
         double nominalBayar = totalHarga - (diskon * totalHarga);
 
-        System.out.println("Item pembelian: " + jumlah + " " + menu + " dengan ukuran cup " + ukuranCup);
+        System.out.println("item pembelian: " + jumlah + " dengan ukuran cup " + ukuranCup);
         System.out.println("Nominal bayar: " + nominalBayar);
+        
     }
 }
-
